@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وردة تنمو</title>
+<title>وردة ضخمة</title>
 <style>
 body{
     margin:0;
@@ -17,119 +17,120 @@ body{
 
 .scene{
     position:relative;
-    width:500px;
-    height:650px;
+    width:100vw;
+    height:100vh;
 }
 
 .main{
     position:absolute;
     left:50%;
-    bottom:70px;
+    bottom:-20px;
     transform:translateX(-50%);
 }
 
 .rose{
     position:relative;
-    width:180px;
-    height:180px;
+    width:430px;
+    height:430px;
     margin:auto;
+    filter:drop-shadow(0 0 35px red);
 }
 
 .petal{
     position:absolute;
-    width:90px;
-    height:90px;
+    width:200px;
+    height:200px;
     background:#ff1a1a;
     border-radius:50%;
-    box-shadow:0 0 20px red;
+    box-shadow:0 0 35px red;
 }
 
-.petal:nth-child(1){top:0;left:45px;}
-.petal:nth-child(2){top:45px;left:0;}
-.petal:nth-child(3){top:45px;right:0;}
-.petal:nth-child(4){bottom:0;left:45px;}
-.petal:nth-child(5){top:28px;left:45px;}
+.petal:nth-child(1){top:0;left:115px;}
+.petal:nth-child(2){top:100px;left:0;}
+.petal:nth-child(3){top:100px;right:0;}
+.petal:nth-child(4){bottom:0;left:115px;}
+.petal:nth-child(5){top:70px;left:115px;}
 
 .center{
     position:absolute;
-    top:72px;
-    left:72px;
-    width:35px;
-    height:35px;
+    top:175px;
+    left:175px;
+    width:70px;
+    height:70px;
     background:#ffe38a;
     border-radius:50%;
-    box-shadow:0 0 15px gold;
+    box-shadow:0 0 30px gold;
 }
 
 .stem{
-    width:12px;
-    height:240px;
+    width:22px;
+    height:420px;
     margin:auto;
     background:linear-gradient(to top,#007a28,#00ff66);
     border-radius:20px;
-    box-shadow:0 0 15px #00ff66;
+    box-shadow:0 0 20px #00ff66;
 }
 
 .branch{
     position:absolute;
-    height:6px;
+    height:10px;
     background:#00cc55;
     border-radius:10px;
     transform-origin:left center;
-    width:0;
-    animation:grow 2s forwards;
+    width:260px;
+    box-shadow:0 0 12px #00ff66;
 }
 
-.branch.left1{top:250px;left:140px;transform:rotate(-35deg);animation-delay:.4s;}
-.branch.right1{top:250px;right:140px;transform:rotate(35deg);animation-delay:.8s;}
-.branch.left2{top:340px;left:110px;transform:rotate(-20deg);animation-delay:1.2s;}
-.branch.right2{top:340px;right:110px;transform:rotate(20deg);animation-delay:1.6s;}
+.branch.left1{top:310px;left:120px;transform:rotate(-35deg);}
+.branch.right1{top:310px;right:120px;transform:rotate(35deg);}
+.branch.left2{top:520px;left:70px;transform:rotate(-15deg);}
+.branch.right2{top:520px;right:70px;transform:rotate(15deg);}
 
 .small{
     position:absolute;
-    top:-25px;
-    right:-25px;
-    width:55px;
-    height:55px;
-    opacity:0;
-    animation:showRose .8s forwards;
+    top:-45px;
+    right:-30px;
+    width:95px;
+    height:95px;
+    filter:drop-shadow(0 0 12px red);
 }
-
-.branch.left1 .small{animation-delay:2s;}
-.branch.right1 .small{animation-delay:2.2s;}
-.branch.left2 .small{animation-delay:2.4s;}
-.branch.right2 .small{animation-delay:2.6s;}
 
 .small .p{
     position:absolute;
-    width:24px;
-    height:24px;
+    width:42px;
+    height:42px;
     background:#ff1a1a;
     border-radius:50%;
-    box-shadow:0 0 10px red;
 }
 
-.small .p:nth-child(1){top:0;left:15px;}
-.small .p:nth-child(2){top:15px;left:0;}
-.small .p:nth-child(3){top:15px;right:0;}
-.small .p:nth-child(4){bottom:0;left:15px;}
+.small .p:nth-child(1){top:0;left:26px;}
+.small .p:nth-child(2){top:24px;left:0;}
+.small .p:nth-child(3){top:24px;right:0;}
+.small .p:nth-child(4){bottom:0;left:26px;}
 
 .small .c{
     position:absolute;
-    top:22px;
-    left:22px;
-    width:10px;
-    height:10px;
+    top:37px;
+    left:37px;
+    width:16px;
+    height:16px;
     background:#ffe38a;
     border-radius:50%;
+    box-shadow:0 0 10px gold;
 }
 
-@keyframes grow{
-    to{width:120px;}
+.sparkle{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:#fff;
+    border-radius:50%;
+    animation:blink 2s infinite alternate;
 }
 
-@keyframes showRose{
-    to{opacity:1;}
+@keyframes blink{
+    from{opacity:.2; transform:translateY(0);}
+    to{opacity:1; transform:translateY(-12px);}
 }
 </style>
 </head>
@@ -171,4 +172,18 @@ body{
     </div>
 
     <div class="branch right2">
-        <div class="small
+        <div class="small">
+            <div class="p"></div><div class="p"></div><div class="p"></div><div class="p"></div>
+            <div class="c"></div>
+        </div>
+    </div>
+
+    <div class="sparkle" style="top:120px; left:180px;"></div>
+    <div class="sparkle" style="top:200px; right:220px;"></div>
+    <div class="sparkle" style="top:350px; left:300px;"></div>
+    <div class="sparkle" style="top:250px; right:350px;"></div>
+
+</div>
+
+</body>
+</html>
