@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورد متحرك</title>
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:black;
+    overflow:hidden;
+}
+
+.garden{
+    position:relative;
+    width:320px;
+    height:320px;
+}
+
+.flower{
+    position:absolute;
+    bottom:0;
+    animation:sway 3s ease-in-out infinite;
+}
+
+.flower:nth-child(1){left:20px;}
+.flower:nth-child(2){left:120px; animation-delay:0.5s;}
+.flower:nth-child(3){left:220px; animation-delay:1s;}
+
+.stem{
+    width:6px;
+    height:140px;
+    background:#00cc44;
+    margin:auto;
+    border-radius:10px;
+}
+
+.petals{
+    position:relative;
+    width:60px;
+    height:60px;
+    margin:auto;
+}
+
+.petal{
+    position:absolute;
+    width:28px;
+    height:28px;
+    background:red;
+    border-radius:50%;
+}
+
+.petal:nth-child(1){top:0; left:16px;}
+.petal:nth-child(2){top:16px; left:0;}
+.petal:nth-child(3){top:16px; right:0;}
+.petal:nth-child(4){bottom:0; left:16px;}
+
+.center{
+    position:absolute;
+    top:22px;
+    left:22px;
+    width:16px;
+    height:16px;
+    background:#ffd700;
+    border-radius:50%;
+}
+
+@keyframes sway{
+    0%,100%{transform:rotate(-2deg);}
+    50%{transform:rotate(2deg);}
+}
+</style>
+</head>
+<body>
+
+<div class="garden">
+    <div class="flower">
+        <div class="petals">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="stem"></div>
+    </div>
+
+    <div class="flower">
+        <div class="petals">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="stem"></div>
+    </div>
+
+    <div class="flower">
+        <div class="petals">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="stem"></div>
+    </div>
+</div>
+
+</body>
+</html>
